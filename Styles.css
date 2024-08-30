@@ -1,5 +1,6 @@
 * {
     font-family: "Nunito", sans-serif;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -27,7 +28,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100vw;
+    width: 100vw;
+    position: fixed;
+    z-index: 10000000;
 }
 
 .nav__img {
@@ -42,7 +45,7 @@ nav {
     list-style-type: none;
     justify-content: space-evenly;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .nav__link {
@@ -133,6 +136,10 @@ nav {
     display: none;
 }
 
+.nav__mobile-menu-bubble {
+    display: none;
+}
+
 @media screen and (max-width: 768px){
     nav {
         display: block;
@@ -213,6 +220,7 @@ nav {
     .nav__link {
         text-decoration: none;
         color: var(--light-pink);
+        text-shadow: 0 0 10px var(--dark-blue);
         font-size: 1.25rem;
         position: relative;
         filter: brightness(1);
@@ -257,6 +265,63 @@ nav {
         box-shadow: 0 10px 20px rgba(254, 214, 205, .8);
         transform: translateX(-50%) translateY(-.2rem);
     }
+    
+    .nav__mobile-menu-bubble {
+        display: block;
+        position: absolute;
+        z-index: -19;
+        transform: translateY(0);
+        animation-name: bubble-movement;
+        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    .nav__bubble-1 {
+        height: 3rem;
+        left: 14em;
+        bottom: 10rem;
+        animation-delay: .25s;
+    }
+
+    .nav__bubble-2 {
+        height: 7rem;
+        left: 2rem;
+        bottom: 6rem;
+        animation-delay: 0;
+    }
+    
+    .nav__bubble-3 {
+        height: 8rem;
+        left: 2rem;
+        bottom: 30rem;
+        animation-delay: .5s;
+    }
+
+    .nav__bubble-4 {
+        height: 11rem;
+        left: 12em;
+        bottom: 15rem;
+        animation-delay: .75s;
+    }
+
+    .nav__bubble-5 {
+        height: 13rem;
+        left: 13em;
+        bottom: 25rem;
+        animation-delay: .1s;
+    }
+
+    @keyframes bubble-movement {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-.3rem);
+        }
+    }
 }
 
 /*Final header*/
@@ -264,8 +329,13 @@ nav {
 
 .hero-section__container {
     max-width: 100vw;
+    height: calc(100vh - 2.5rem);
     text-align: center;
     padding: 0 1rem;
+    padding-top: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-section__img-container {
@@ -297,6 +367,33 @@ nav {
     text-shadow: 0 0 20px var(--dark-blue);
 }
 
+.hero-section__explore-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--light-pink);
+}
+
+.hero-section__explore-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    max-height: 2.5rem;
+    max-width: 2.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--beige);
+    background-color: var(--light-purple);
+    margin: 1rem auto;
+    overflow: hidden;
+}
+
+.arrow-down {
+    color: var(--light-pink);
+    font-size: 1rem;
+    padding: 2.5em;
+}
+
 /*Final Hero Section*/
 /*Inicio Services Section*/
 
@@ -305,6 +402,7 @@ nav {
     text-align: center;
     padding: 0 1rem;
     margin: 3rem 0;
+    margin-top: 10rem;
 }
 
 .services-section__title-text-container {
@@ -387,6 +485,25 @@ nav {
 /*Final Services Section*/
 
 @media screen and (min-width:425px) {
+.nav__bubble-1 {
+    left: 22em;
+}
+
+.nav__bubble-2 {
+    left: 10rem;
+}
+    
+.nav__bubble-3 {
+    left: 10rem;
+}
+
+    .nav__bubble-4 {
+    left: 20em;
+}
+
+.nav__bubble-5 {
+    left: 21em;
+}
 
 .hero-section__container {
     width: 425px;
@@ -410,6 +527,43 @@ nav {
 .hero-section__img {
     height: 12rem;
 }
+
+.hero-section__explore-title {
+    font-size: 1.125rem;
+}
+
+.hero-section__explore-button {
+    min-height: 4rem;
+    min-width: 4rem;
+    max-height: 4rem;
+    max-width: 4rem;
+}
+
+.arrow-down {
+    font-size: 2rem;
+}
+}
+
+@media screen and (min-width:580px){
+    .nav__bubble-1 {
+        left: 27em;
+    }
+    
+        .nav__bubble-2 {
+        left: 15rem;
+    }
+        
+    .nav__bubble-3 {
+        left: 15rem;
+    }
+    
+        .nav__bubble-4 {
+        left: 25em;
+    }
+    
+    .nav__bubble-5 {
+        left: 26em;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -418,7 +572,7 @@ nav {
     }
 
     .hero-section__title {
-        font-size: 2.125rem;
+        font-size: 2.75rem;
         width: 75%;
     }
     
@@ -436,6 +590,21 @@ nav {
     .hero-section__img {
         height: 13rem;
     }
+
+    .hero-section__explore-title {
+        font-size: 1.25rem;
+    }
+    
+    .hero-section__explore-button {
+        min-height: 4.525rem;
+        min-width: 4.525rem;
+        max-height: 4.525rem;
+        max-width: 4.525rem;
+    }
+    
+    .arrow-down {
+        font-size: 2.525rem;
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -444,11 +613,27 @@ nav {
     }
 
     .hero-section__title {
-        font-size: 2.25rem;
+        font-size: 2.875rem;
     }
     
     .hero-section__subtitle {
         font-size: 1.25rem;
+    }
+
+    .hero-section__explore-title {
+        font-size: 1.375rem;
+        margin-top: 2rem;
+    }
+    
+    .hero-section__explore-button {
+        min-height: 4.65rem;
+        min-width: 4.65rem;
+        max-height: 4.65rem;
+        max-width: 4.65rem;
+    }
+    
+    .arrow-down {
+        font-size: 2.65rem;
     }
 }
 
@@ -466,12 +651,30 @@ nav {
     }
 
     .hero-section__title {
-        font-size: 2.375rem;
+        font-size: 3rem;
     }
     
     .hero-section__subtitle {
         font-size: 1.375rem;
         line-height: 1.75rem;
+    }
+
+    .hero-section__explore-title {
+        font-size: 1.5rem;
+        width: 50%;
+        margin: auto;
+        margin-top: 2rem;
+    }
+    
+    .hero-section__explore-button {
+        min-height: 4.875rem;
+        min-width: 4.875rem;
+        max-height: 4.875rem;
+        max-width: 4.875rem;
+    }
+    
+    .arrow-down {
+        font-size: 2.875rem;
     }
 }
 
@@ -488,10 +691,27 @@ nav {
     }
 
     .hero-section__title {
-        font-size: 2.5rem;
+        font-size: 3.125rem;
     }
     
     .hero-section__subtitle {
         font-size: 1.5rem;
+    }
+
+    .hero-section__explore-title {
+        font-size: 1.625rem;
+        margin: 1em auto;
+        margin-top: 5rem;
+    }
+    
+    .hero-section__explore-button {
+        min-height: 5rem;
+        min-width: 5rem;
+        max-height: 5rem;
+        max-width: 5rem;
+    }
+    
+    .arrow-down {
+        font-size: 3rem;
     }
 }
