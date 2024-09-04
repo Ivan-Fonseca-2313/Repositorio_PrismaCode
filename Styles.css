@@ -1361,22 +1361,153 @@ nav {
 
     .testimonies-section__pc-testimonies-container {
         display: flex;
-        width: 100%;
+        width: 70%;
         height: fit-content;
         margin: auto;
-        overflow: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        position: relative;
+    }
+
+    .testimonies-section__pc-testimonies-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    #pc-testimony-1-link {
+        position: absolute;
+        z-index: 1;
+        min-width: 60%;
+        height: 100%;
+        border-radius: 1rem;
+        transform: scale(.7) translateX(14.25rem);
+    }
+
+    #pc-testimony-2-link {
+        position: absolute;
+        z-index: 1;
+        min-width: 60%;
+        height: 100%;
+        border-radius: 1rem;
+        transform: scale(.7) translateX(51.5rem);
+    }
+
+    #pc-testimony-3-link {
+        position: absolute;
+        z-index: 1;
+        min-width: 60%;
+        height: 100%;
+        border-radius: 1rem;
+        transform: scale(.7) translateX(88.75rem);
+    }
+
+    #pc-testimony-4-link {
+        position: absolute;
+        z-index: 1;
+        min-width: 60%;
+        height: 100%;
+        border-radius: 1rem;
+        transform: scale(.7) translateX(126rem);
+        
+    }
+
+    #pc-testimony-5-link {
+        position: absolute;
+        z-index: 1;
+        min-width: 60%;
+        height: 100%;
+        border-radius: 1rem;
+        transform: scale(.7) translateX(163.25rem);
     }
 
     .testimonies-section__pc-testimony-container {
-        min-width: 40%;
-        margin-left: 3rem;
+        min-width: 60%;
+        margin: 0;
         padding: 1rem;
         background-color: var(--beige);
         border-radius: 1rem;
+        filter: grayscale(1);
+        transform: scale(.7);
+        transition-property: transform, filter;
+        transition-duration: .5s;
+        scroll-snap-align: center;
+        text-decoration: none;
+    }
+
+    .testimonies-section__pc-testimony-container:hover {
+        transform: scale(.75);
     }
 
     .pc-testimony-1 {
-        margin-left: 0;
+        margin-left: 10rem;
+    }
+
+    .pc-testimony-5 {
+        margin-right: 10rem;
+    }
+
+    #pc-testimony-1-link:target ~ .pc-testimony-1 {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    #pc-testimony-2-link:target ~ .pc-testimony-2 {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    #pc-testimony-3-link:target ~ .pc-testimony-3 {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    #pc-testimony-4-link:target ~ .pc-testimony-4 {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    #pc-testimony-5-link:target ~ .pc-testimony-5 {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    #pc-testimony-1-link:target {
+        animation-name: link-display-none-delay;
+        animation-duration: 0.0000001s;
+        animation-delay: 1s;
+    }
+
+    #pc-testimony-2-link:target {
+        animation-name: link-display-none-delay;
+        animation-duration: 0.0000001s;
+        animation-delay: 1s;
+    }
+
+    #pc-testimony-3-link:target {
+        animation-name: link-display-none-delay;
+        animation-duration: 0.0000001s;
+        animation-delay: 1s;
+    }
+
+    #pc-testimony-4-link:target {
+        animation-name: link-display-none-delay;
+        animation-duration: 0.0000001s;
+        animation-delay: 1s;
+    }
+
+    #pc-testimony-5-link:target {
+        animation-name: link-display-none-delay;
+        animation-duration: 0.0000001s;
+        animation-delay: 1s;
+    }
+
+    @keyframes link-display-none-delay {
+        from {
+            display: initial;
+        }
+
+        to {
+            display: none;
+        }
     }
 }
 
