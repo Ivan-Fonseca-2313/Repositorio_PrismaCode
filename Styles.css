@@ -1355,6 +1355,10 @@ nav {
         display: none;
     }
 
+    .testimonies-section__slide-show-text {
+        display: none;
+    }
+
     .testimonies-section__pc-testimonies-container {
         display: flex;
         width: 100%;
@@ -1364,9 +1368,11 @@ nav {
     }
 
     .testimonies-section__pc-testimony-container {
-        max-width: 40%;
-        height: 100%;
+        min-width: 40%;
         margin-left: 3rem;
+        padding: 1rem;
+        background-color: var(--beige);
+        border-radius: 1rem;
     }
 
     .pc-testimony-1 {
