@@ -635,6 +635,7 @@ nav {
 .testimonies-section__container {
     padding: 1rem;
     padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .testimonies-section__title-container {
@@ -665,44 +666,32 @@ nav {
 }
 
 .testimonies-section__mobile-testimonies-container {
-    display: block;
+    display: flex;
     position: relative;
     height: 30rem;
     width: 90vw;
-    overflow: hidden;
-}
-
-[type="radio"] {
-    display: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    margin: auto;
 }
 
 .testimonies-section__testimony-container {
-    position: absolute;
     padding: 1rem;
     background-color: var(--beige);
     border-radius: 1rem;
     min-width: 100%;
-    height: 30rem;
+    height: 100%;
+    scroll-snap-align: center;
+    margin-right: 3rem;
 }
 
 .testimony-1 {
-    z-index: 100;
-}
-
-.testimony-2 {
-    z-index: 80;
-}
-
-.testimony-3 {
-    z-index: 60;
-}
-
-.testimony-4 {
-    z-index: 40;
+    margin-left: 3rem;
 }
 
 .testimony-5 {
-    z-index: 20;
+    margin-right: 3rem;
 }
 
 .testimonies-section__testimony-img {
@@ -731,57 +720,6 @@ nav {
     font-size: 1rem;
     font-style: italic;
     text-align: center;
-}
-
-.testimonies-section__dot-container {
-    display: flex;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-}
-
-.dot {
-    height: .8rem;
-    width: .8rem;
-    background-color: var(--pink);
-    border-radius: 50%;
-    margin: .5rem;
-}
-
-.testimonies-section__mobile-input-1:checked ~ .testimony-1 {
-    animation-name: slide;
-    animation-fill-mode: forwards;
-}
-
-.testimonies-section__mobile-input-2:checked ~ .testimony-2 {
-    animation-name: slide;
-    animation-fill-mode: forwards;
-}
-
-.testimonies-section__mobile-input-3:checked ~ .testimony-3 {
-    animation-name: slide;
-    animation-fill-mode: forwards;
-}
-
-.testimonies-section__mobile-input-4:checked ~ .testimony-4 {
-    animation-name: slide;
-    animation-fill-mode: forwards;
-}
-
-.testimonies-section__mobile-input-5:checked ~ .testimony-5 {
-    animation-name: slide;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide {
-    from {
-        z-index: 0;
-    }
-
-    to {
-        z-index: 100;
-    }
 }
 
 /*Final Testimonies Section*/
