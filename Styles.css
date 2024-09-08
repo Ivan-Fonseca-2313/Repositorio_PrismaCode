@@ -2173,6 +2173,12 @@ nav {
     .CTA-section__proyect-text {
         font-size: 1.5rem;
     }
+
+    .CTA-section__proyect-list {
+        position: relative;
+        left: 50%;
+        transform: translateX(-22%);
+    }
     
     .CTA-section__proyect-li {
         font-size: 1.5rem;
@@ -2436,6 +2442,12 @@ nav {
     
     .CTA-section__proyect-text {
         font-size: 1.625rem;
+    }
+
+    .CTA-section__proyect-list {
+        position: relative;
+        left: 50%;
+        transform: translateX(-17%);
     }
     
     .CTA-section__proyect-li {
